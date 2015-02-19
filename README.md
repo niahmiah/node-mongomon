@@ -18,7 +18,7 @@ For example, you can run this to monitor each mongos and mongod process in your 
 
 ```
 var Mongomon = require('./index');
-var mongomon = new Mongomon({interval: 5000, url: 'localhost:27017/mydatabase'});
+var mongomon = new Mongomon({interval: 5000, url: 'mongodb://localhost:27017/mydatabase'});
 
 mongomon.on('serverStatus', function(data){
   console.log('server stats:',JSON.stringify(data));
@@ -38,9 +38,13 @@ mongomon.on('collstat', function(data){
 //start calling db.serverStatus() on the provided interval
 mongomon.start();
 
-//get database statistics once
-mongomon.getDBStats();
-//get collection statistics once (for each collection in the database)
-mongomon.getCollStats();
+//or, to just get stats, you can manually connect and pull them
+
+mongomon.connect(function(){
+  //get database statistics once
+  mongomon.getDBStats();
+  //get collection statistics once (for each collection in the database)
+  mongomon.getCollStats();
+});
 
 ```

@@ -1,5 +1,5 @@
 var Mongomon = require('./index');
-var mongomon = new Mongomon({interval: 2000, url: 'localhost:27017/bitpay-dev'});
+var mongomon = new Mongomon({interval: 2000, url: 'mongodb://localhost:27017/bitpay-dev'});
 
 mongomon.on('mongostat', function(data){
   console.log('mongostat',JSON.stringify(data));
@@ -16,9 +16,10 @@ mongomon.on('collstat', function(data){
   console.log();
 });
 
-mongomon.start();
-mongomon.getDBStats();
-mongomon.getCollStats();
+mongomon.start(function(){
+  mongomon.getCollStats();
+  mongomon.getDBStats();
+});
 
 setTimeout(function(){
   mongomon.stop();

@@ -1,6 +1,6 @@
 {
   "name": "mongomon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A mongodb monitor written for node.js",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/niahmiah/node-mongomon",
   "dependencies": {
-    "shelljs": "^0.3.0"
+    "mongodb": "^1.4.12"
   }
 }
