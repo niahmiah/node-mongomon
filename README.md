@@ -20,7 +20,7 @@ For example, you can run this to monitor each mongos and mongod process in your 
 var Mongomon = require('./index');
 var mongomon = new Mongomon({interval: 5000, url: 'mongodb://localhost:27017/mydatabase'});
 
-mongomon.on('serverStatus', function(data){
+mongomon.on('mongostat', function(data){
   console.log('server stats:',JSON.stringify(data));
   console.log();
 });
