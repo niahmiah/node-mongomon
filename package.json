@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/niahmiah/node-mongomon",
   "dependencies": {
-    "mongodb": "^1.4.12"
+    "mongodb": "^2.2.31"
   }
 }
