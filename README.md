@@ -1,4 +1,6 @@
 # mongomon
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/niahmiah/node-mongomon.svg)](https://greenkeeper.io/)
 mongomon is a MongoDB server status monitor written for node.js.
 
 The current version is a wrapper around the several mongo diagnostic commands that are available in the mongo shell.
